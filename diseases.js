@@ -14,8 +14,6 @@ let enfermedad = {
     sintomas: [1, 2, 3, 4]
 }
 */
-
-
 const SINTOMAS = [
     { id: 1, name: "Dificultad para respirar"},//Infarto
     { id: 2, name: "Dolor en el pecho" },
@@ -81,7 +79,7 @@ const DISEASES_DATA = [
     [ 1, 8, 9, 5, 2],      [ 8, 25, 1, 21, 2],   [ 26, 24, 23, 7, 2],
 
 
-    ////
+    //// Faltan aqui 
     [ 20, 10, 19, 11, 3], [ 18, 12, 17, 13, 3], [ 16, 14, 15, 20, 3]
 ];
 /*
