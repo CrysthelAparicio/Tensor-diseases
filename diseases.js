@@ -114,8 +114,8 @@ function getDiseases(testSplit) {
             targetByClass.push([]);
         }
         for(const example of DISEASES_DATA){
-            const target = example[example.length -1]; //destino
-            const data = example.slice(0, example.length-1); //informacion
+            const target = example[example.length -1]; // id de la enfermedad
+            const data = example.slice(0, example.length-1); // arreglo de los id de 4 sintomas
             dataByClass[target-1].push(data);
             targetByClass[target-1].push(target);
         }
@@ -151,7 +151,7 @@ function convertToTensors(data, target, testSplit){
     const numTestExamples = Math.round(numExamples*testSplit);//de la cantidad total de datos solo extrae un porcentaje de los mismos para brueba
     const numTrainExamples = numExamples - numTestExamples; //los dos restante que no se usan para prueba, se utilizan para entrenamiento
 
-    const xDim = data[0].length;
+    const xDim = data[0].length; //tamaño de un bloque de la data 
 
     //construyendo un tensor2D a partir de los datos de recopilados de una fila  
     const xs = tf.tensor2d(data, [numExamples, xDim]);
@@ -159,7 +159,7 @@ function convertToTensors(data, target, testSplit){
     //Crear un tensor1d y convertir a onehot encoding
     const ys = tf.oneHot(tf.tensor1d(target).toInt(), CANT_DISEASES);
     
-    //Dividir la y retornarla
+    //Recogiendo la data y retornarla
     const xTrain = xs.slice([0,0], [numTrainExamples, xDim]);
     const xTest = xs.slice([numTrainExamples, 0], [numTestExamples, xDim]);
     const yTrain = ys.slice([0,0], [numTrainExamples, CANT_DISEASES]);
