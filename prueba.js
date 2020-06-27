@@ -1,6 +1,6 @@
 const tfmotor = require('./tfmotor.js');
 
-const sintomas = [ 7, 5, 9, 8 ];
+const sintomas = [ 19, 27, 28, 29 ];
 
 async function obtenerEnfermedad(sintomas) {
     const enfermedad = await tfmotor.predictDiseases(sintomas);
