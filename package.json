@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tensorflow/tfjs": "^2.0.1"
+    "@tensorflow/tfjs": "^2.8.6"
   }
 }
